@@ -1,18 +1,11 @@
 import { config } from 'dotenv'
+import { Client } from 'discord.js'
+import { EventHandler } from './handlers/eventhandler.js'
+import Deps from './utils/deps.js'
 config({ path: '.env' })
 
-import { Client } from 'discord.js'
+export const bot = Deps.add(Client, new Client())
 
-const bot = new Client()
-
-bot.on('ready', () => {
-    console.log(`${bot.user.username} is online!`)
-})
-
-bot.on('message', async (msg) => {
-    if (msg.author.bot) return
-
-    await msg.reply('Hello!')
-})
+Deps.get(EventHandler).init()
 
 bot.login(process.env.BOT_TOKEN)
