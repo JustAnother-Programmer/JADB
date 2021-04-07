@@ -1,0 +1,23 @@
+{
+  "name": "jadb",
+  "version": "1.0.0",
+  "description": "Just-Another-Discord-Bot is a bot that contains many utilities for easy moderation etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustAnother-Programmer/JADB.git"
+  },
+  "keywords": [],
+  "author": "JustAnother-Programmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustAnother-Programmer/JADB/issues"
+  },
+  "homepage": "https://github.com/JustAnother-Programmer/JADB#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
