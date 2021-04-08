@@ -20,6 +20,7 @@
   "homepage": "https://github.com/JustAnother-Programmer/JADB#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.12.3"
   }
 }
