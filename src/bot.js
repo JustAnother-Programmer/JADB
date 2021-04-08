@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI, {
     useFindAndModify: true,
     useCreateIndex: true,
 }, (error) => (error) 
-    ? console.log('Failed to connect to JADB database with error ' + error)
+    ? console.log('Failed to connect to JADB database with error: ' + error)
     : console.log('Connected to JADB database.'))
 
 Deps.get(EventHandler).init()
