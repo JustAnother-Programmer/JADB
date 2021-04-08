@@ -1,8 +1,8 @@
 import { config } from 'dotenv'
 import { Client } from 'discord.js'
+import mongoose from 'mongoose'
 import { EventHandler } from './handlers/eventhandler.js'
 import Deps from './utils/deps.js'
-import mongoose from 'mongoose'
 config({ path: '.env' })
 
 export const bot = Deps.add(Client, new Client())
