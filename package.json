@@ -4,7 +4,7 @@
   "description": "Just-Another-Discord-Bot is a bot that contains many utilities for easy moderation etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": " node src/bot.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.12.3"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
