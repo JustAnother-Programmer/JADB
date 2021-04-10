@@ -1,0 +1,30 @@
+include includes/header.pug
+include includes/mixins.pug
+body 
+    link(rel='stylesheet', href='styles/commands.css')
+    script(src='https://cdn.jsdelivr.net/npm/fuse.js@6.4.6', defer)
+    script(src='javascript/commands.js', defer)
+    script(defer).
+        let commands = !{commandsString}
+    include includes/navbar.pug
+
+    .container
+      .jumbotron.text-center.bg-transparent
+        h1.display-3.fw-bold Commands
+        br
+        p.lead View all available commands for JADB
+        p.lead This page is currently a work in progress.
+        hr
+
+        section#commands
+            .row 
+                .col-sm-3.categories
+                    ul.list-group.my-2
+                        p Included Command Categories:
+                        each category in categories
+                            +category(category)   
+                .col-sm-9
+                    ul.list-group.mb-2
+                        p All commands:
+                        each command in commands
+                            +command(command)

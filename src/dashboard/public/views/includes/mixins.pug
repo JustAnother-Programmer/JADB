@@ -1,0 +1,5 @@
+mixin category(category)
+    li.list-group-item(id=category.category) #[i(class=category.icon)] #{category.name}
+
+mixin command(command)
+    li.list-group-item(class=command.category) #{command.name}

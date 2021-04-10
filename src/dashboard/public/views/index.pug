@@ -1,15 +1,16 @@
 include includes/header.pug
+link(rel='stylesheet', href='/styles/style.css')
 body
     include includes/navbar.pug
-    .bg-light.text-center
+    .main.text-center
         br
         br
         h1.display-3 JustAnotherDiscordBot
         br
         br
-        p.lead Hi! I am JustAnotherDiscordBot, a multipurpose discord bot!
+        p.lead Hi! I am JustAnotherDiscordBot, a multipurpose discord bot! 
         br
         br
-        button.btn.btn-dark(type='button') Add
+        a.btn.btn-dark(href='/invite') Add
         br
         br
