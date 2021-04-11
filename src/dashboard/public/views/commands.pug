@@ -25,10 +25,10 @@ body
             .row
                 .col-sm-3.categories
                     ul.list-group.mb-2
-                    each category in categories
-                        +category(category)
+                        each category in categories
+                            +category(category)
                 .col-sm-9.commands
                     ul.list-group.mb-2
-                    each command in commands
-                        +command(command)
-                    p#commandError
+                        each command in commands
+                            +command(command)
+                        p#commandError
