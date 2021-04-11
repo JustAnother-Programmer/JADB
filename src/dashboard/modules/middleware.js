@@ -10,3 +10,9 @@ module.exports.updateUser = async (req, res, next) => {
         next()
     }
 }
+
+module.exports.validateUser = async (req, res, next) => {
+    res.locals.user
+        ? next()
+        : res.render('errors/401')
+}
