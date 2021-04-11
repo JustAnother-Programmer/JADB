@@ -1,11 +1,10 @@
-import { Client } from "discord.js"
-import Command from "./command.js"
-import Deps from '../../utils/deps.js'
+const { Client } = require('discord.js')
+const Command = require('./command.js')
 
-export default class extends Command {
+module.exports = class extends Command {
     name = 'ping'
 
     async execute(msg) {
-        await msg.reply(`🏓 Pong! ${Math.round(Deps.get(Client).ws.ping)}ms`)
+        await msg.reply(`🏓 Pong! ${Math.round(Client.ws.ping)}ms`)
     }
 }

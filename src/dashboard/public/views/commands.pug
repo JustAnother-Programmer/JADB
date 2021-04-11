@@ -17,14 +17,18 @@ body
         hr
 
         section#commands
-            .row 
+            .d-flex.justify-content-center
+            #search.form-group.p-3
+                input.form-control(type='search')
+            button.btn
+                i.fas.fa-search
+            .row
                 .col-sm-3.categories
-                    ul.list-group.my-2
-                        p Included Command Categories:
-                        each category in categories
-                            +category(category)   
-                .col-sm-9
                     ul.list-group.mb-2
-                        p All commands:
-                        each command in commands
-                            +command(command)
+                    each category in categories
+                        +category(category)
+                .col-sm-9.commands
+                    ul.list-group.mb-2
+                    each command in commands
+                        +command(command)
+                    p#commandError

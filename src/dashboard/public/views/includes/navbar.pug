@@ -13,6 +13,11 @@ nav.navbar.navbar-expand-lg.navbar-light
           i.fab.fa-github-square
           span.pl-5  Source Code
       .mx-left-auto
-        a.nav-link(href='/login') 
-          i.fas.fa-sign-in-alt
-          span.pl-5  Login
+        if user 
+          a.nav-link(href='/dashboard') 
+            i.fas.fa-sign-in-alt
+            span.pl-5  #{user.username}
+        else 
+          a.nav-link(href='/login') 
+            i.fas.fa-sign-in-alt
+            span.pl-5  Login

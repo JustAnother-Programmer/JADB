@@ -1,17 +1,11 @@
-import Command from './command.js'
-import { Guilds } from '../../data/guilds.js'
-import Deps from '../../utils/deps.js'
+const Command = require('./command.js')
+const guilds = require('../../data/guilds.js')
 
-export default class extends Command {
+module.exports = class extends Command {
     name = 'prefix'
 
-    constructor() {
-        super()
-        this.guilds = Deps.get(Guilds)
-    }
-
     async execute(msg, value) {
-        const savedGuild = await this.guilds.get(msg.guild.id)
+        const savedGuild = await guilds.get(msg.guild.id)
         if(!value)
             return await msg.reply(`Prefix is \`${savedGuild.prefix}\``)
 

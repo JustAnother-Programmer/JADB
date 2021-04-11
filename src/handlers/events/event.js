@@ -1,7 +1,7 @@
-export default class {
-    on = ''
-
+module.exports = class {
+    on = '';
+    
     invoke(...args) {
-        throw new TypeError('Not Implemented')
+      throw new TypeError('Invoke not implemented.');
     }
-}
+  }

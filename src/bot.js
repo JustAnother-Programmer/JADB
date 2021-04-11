@@ -1,11 +1,9 @@
-import { config } from 'dotenv'
-import { Client } from 'discord.js'
-import mongoose from 'mongoose'
-import { EventHandler } from './handlers/eventhandler.js'
-import Deps from './utils/deps.js'
-config({ path: '.env' })
+const dotenv = require('dotenv')
+const { Client } = require('discord.js')
+const mongoose = require('mongoose')
+dotenv.config({ path: '.env' })
 
-export const bot = Deps.add(Client, new Client())
+const bot = new Client()
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -16,8 +14,9 @@ mongoose.connect(process.env.MONGO_URI, {
     ? console.log('Failed to connect to JADB database with error: ' + error)
     : console.log('Connected to JADB database.'))
 
-Deps.get(EventHandler).init()
-
 bot.login(process.env.BOT_TOKEN)
 
-import './dashboard/server.js'
+module.exports = bot
+
+require('./handlers/eventhandler.js')
+require('./dashboard/server.js')

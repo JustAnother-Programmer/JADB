@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
-export const SavedGuild = mongoose.model('guild', new mongoose.Schema({
+module.exports = mongoose.model('guild', new mongoose.Schema({
     _id: String,
     prefix: { type: String, default: '!' },
 }))

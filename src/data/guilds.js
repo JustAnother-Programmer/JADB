@@ -1,8 +1,8 @@
-import { SavedGuild } from "./models/guild.js";
+const SavedGuild = require('./models/guild.js');
 
-export class Guilds {
-    async get(id) {
-        return await SavedGuild.findById(id)
-            ?? await SavedGuild.create({ _id: id })
-    }
+module.exports = new class {
+  async get(id) {
+    return await SavedGuild.findById(id)
+      || await new SavedGuild({ _id: id }).save();
+  }
 }

@@ -1,7 +1,8 @@
-export default class {
+module.exports = class {
     name = ''
-
-    execute(msg, ...args) {
-        throw new TypeError('Not Implemented')
+    category = 'General'
+    
+    execute(...args) {
+      throw new TypeError('Execute not implemented.')
     }
-}
+  }

@@ -1,32 +1,41 @@
-import { readdirSync } from 'fs'
+const fs = require('fs')
+const guilds = require('../data/guilds.js')
 
-export class CommandHandler {
-    commands = new Map()
+const commands = new Map()
 
-    async init() {
-        const fileNames = readdirSync('./src/handlers/commands')
-        for(const name of fileNames) {
-            const { default: Command} = await import(`./commands/${name}`)
-            const command = new Command()
-            if(!command.name) continue
-            
-            this.commands.set(command.name, command)
-        }
-        console.log(`${fileNames.length - 1} commands were loaded!`)
-    }
+const fileNames = fs.readdirSync(__dirname + '/commands')
+for (let fileName of fileNames) {
+  const Command = require( __dirname + `/commands/${fileName}`)
+  const command = new Command()
+  if (!command.name) continue
 
-    async handle(prefix, msg) {
-        try {
-            const content = msg.content
-            .slice(prefix.length)
-            .split(' ')
-        
-            await this.commands
-            .get(content[0])
-            ?.execute(msg, ...content.slice(1))
-        } catch (err) {
-            await msg.reply(`⚠ ${error.message}`)
-        }
-        
-    }
+  commands.set(command.name, command)
 }
+console.log(`Loaded ${commands.size} commands`)
+
+async function handleCommand(msg) {
+  const savedGuild = await guilds.get(msg.guild.id)
+  const prefix = savedGuild.prefix
+
+  if (!msg.content.startsWith(prefix))
+    return false
+
+  const name = msg.content
+    .split(' ')[0]
+    .slice(prefix.length)
+
+  const args = msg.content
+    .split(' ')
+    .slice(1)
+
+  const command = commands.get(name)
+  try { await command?.execute(msg, ...args) }
+  catch (error) {
+    msg.channel.send(`⚠ ${error?.message ?? 'Unknown error.'}`)
+  }
+
+  return true
+}
+
+module.exports.handleCommand = handleCommand
+module.exports.commands = commands

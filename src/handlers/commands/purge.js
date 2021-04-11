@@ -1,7 +1,8 @@
-import Command from './command.js'
+const Command = require('./command.js')
 
-export default class extends Command {
+module.exports = class extends Command {
     name = 'purge'
+    category = 'Administration'
 
     async execute(msg, value) {
         const channel = msg.channel
