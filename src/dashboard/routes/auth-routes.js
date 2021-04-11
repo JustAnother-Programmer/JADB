@@ -20,7 +20,7 @@ router.get('/auth', async (req, res) => {
 })
 
 router.get('/logout', (req, res) => {
-    res.cookies.set('userKey', '')
+    res.cookie('userKey', '')
     
     res.redirect('/')
 })

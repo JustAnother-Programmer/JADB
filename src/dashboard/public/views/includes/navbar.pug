@@ -14,23 +14,15 @@ nav.navbar.navbar-expand-lg.navbar-light
           span.pl-5  Source Code
       .mx-left-auto
         if user 
-          .dropdown.mr-3
-            .dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false')
-               img.user-avatar.round(src=user.avatarUrl(32))
-               span.pl-2 #{user.username}
-                ul.dropdown-menu(aria-labelledby='dropdownMenuButton1')
-                  li
-                    a.dropdown-item(href='/dashboard') Dashboard
-                  li 
-                    hr
-                  li
-                    a.dropdown-item(href='/logout') Logout
-
-          a.nav-link(href='/dashboard') 
-            i.fas.fa-sign-in-alt
-            span.pl-5  
-              img.user-avatar
-              span #{user.username}
+          .dropdown
+            a#dropdownMenuLink.btn.btn-secondary.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+              img.user-avatar.round(src=user.avatarUrl(32))
+              span.pl-2  #{user.username}
+            ul.dropdown-menu(aria-labelledby='dropdownMenuLink')
+              li
+                a.dropdown-item(href='/dashboard') Dashboard
+              li
+                a.dropdown-item(href='/logout') Logout
         else 
           a.nav-link(href='/login') 
             i.fas.fa-sign-in-alt
