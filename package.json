@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/JustAnother-Programmer/JADB#readme",
   "dependencies": {
-    "cookies": "^0.8.0",
+    "cookie-parser": "^1.4.5",
     "disco-oauth": "^5.0.1",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",

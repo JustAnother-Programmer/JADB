@@ -1,4 +1,5 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const authClient = require('../modules/auth-client.js')
 
 const router = express.Router()
@@ -9,13 +10,19 @@ router.get('/auth', async (req, res) => {
     try {
         const code = req.query.code
         const key = await authClient.getAccess(code)
-        
-        res.cookies.set('userKey', key)
+
+        res.cookie('userKey', key)
         res.redirect('/dashboard')
     } catch (err) {
         console.log(err)
         res.redirect('/')
     }
+})
+
+router.get('/logout', (req, res) => {
+    res.cookies.set('userKey', '')
+    
+    res.redirect('/')
 })
 
 module.exports = router
