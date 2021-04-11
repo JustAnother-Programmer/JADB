@@ -2,6 +2,7 @@ include includes/header.pug
 link(rel='stylesheet', href='/styles/style.css')
 link(rel='stylesheet', href='/styles/sidebar.css')
 script(src='/javascript/sidebar.js', defer)
+script(src='/javascript/guild.js', defer)
 body
     include includes/sidebar.pug
 
@@ -15,15 +16,15 @@ body
             h4.pt-2 #{guild.name}
         .tabs.navbar-nav 
             .category Modules 
-            a(href='#') #[i.fas.fa-gavel.pr-1.text-muted] Administration 
-            a(href='#') #[i.fas.fa-coins.pr-1.text-muted] Economy 
-            a(href='#') #[i.fas.fa-music.pr-1.text-muted] Music 
-            a(href='#') #[i.fas.fa-star.pr-1.text-muted] General 
+            a#administration #[i.fas.fa-gavel.pr-1.text-muted] Administration 
+            a#economy #[i.fas.fa-coins.pr-1.text-muted] Economy 
+            a#music #[i.fas.fa-music.pr-1.text-muted] Music 
+            a#general #[i.fas.fa-star.pr-1.text-muted] General 
 
     include includes/navbar.pug
-    .main.text-center.container
-        br
-        br
-        h1.display-3 #{guild.name}
-        hr
-        p.lead Manage your servers and configurations here!
+
+    include modules/overview
+    include modules/administration
+    include modules/economy
+    include modules/general
+    include modules/music
