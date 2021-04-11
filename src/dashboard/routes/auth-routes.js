@@ -4,7 +4,9 @@ const authClient = require('../modules/auth-client.js')
 
 const router = express.Router()
 
-router.get('/login', (req, res) => res.redirect(`https://discord.com/api/oauth2/authorize?client_id=829407889566728275&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&response_type=code&scope=identify%20guilds`))
+router.get('/invite', (req, res) => res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${process.env.ID}&redirect_uri=${process.env.DASHBOARD_URL}/dashboard&response_type=code&scope=bot`))
+
+router.get('/login', (req, res) => res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${process.env.ID}&redirect_uri=${process.env.DASHBOARD_URL}/auth&response_type=code&scope=identify%20guilds`))
 
 router.get('/auth', async (req, res) => {
     try {

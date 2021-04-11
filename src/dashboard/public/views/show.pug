@@ -4,7 +4,9 @@ link(rel='stylesheet', href='/styles/sidebar.css')
 body
     include includes/sidebar.pug
     include includes/navbar.pug
-    .main.text-center
+    .main.text-center.container
         br
         br
-        h1.display-3 Dashboard
+        h1.display-3 #{guild.name}
+        hr
+        p.lead Manage your servers and configurations here!
