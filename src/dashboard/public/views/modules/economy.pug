@@ -1,6 +1,14 @@
 section#economyModule.module.container.px-5
-    .jumbotron.bg-transparent.pb-0 
-        h1.display-4.text-center Economy
-    .form-group.mt-5
-        .row 
-        
+    form(action='/servers/' + guild.id + '/economy?_method=PUT', method='POST')
+        .jumbotron.bg-transparent.pb-0 
+            h1.display-4.text-center Economy
+        .form-group.my-5
+            .row 
+                .col-4 
+                    label Message Cooldown 
+                    input.form-control(type='number', name='messageCooldown', value=savedGuild.economy.messageCooldown, min='1')
+                .col-4 
+                    label Minimum Message Length
+                    input.form-control(type='number', name='minLength', value=savedGuild.economy.minLength, min='1')
+        .d-flex.justify-content-center 
+            button.btn.btn-success #[i.fas.fa-rocket] Save 
