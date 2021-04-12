@@ -1,11 +1,23 @@
 include includes/header.pug
+
 script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js', defer)
+script(src='https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js', defer)
 script(src='/javascript/sidebar.js', defer)
 script(src='/javascript/guild.js', defer)
+script(src='/javascript/charts.js', defer)
+script(defer).
+    const commandsLog = [!{savedLog.commands}]
+    const messagesLog = [!{savedLog.messages}]
+    const punishmentsLog = [!{savedLog.punishments}]
+    const joinsLog = [!{savedLog.joins}]
+    const leavesLog = [!{savedLog.leaves}]
 
 link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css')
+link(rel='stylesheet', href='https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css')
 link(rel='stylesheet', href='/styles/style.css')
 link(rel='stylesheet', href='/styles/sidebar.css')
+link(rel='stylesheet', href='/styles/charts.css')
+
 body
     include includes/sidebar.pug
     include includes/mixins.pug

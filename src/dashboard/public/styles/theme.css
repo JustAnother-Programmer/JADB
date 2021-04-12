@@ -20,3 +20,25 @@
     --background-secondary: #2F3136;
     --background-tertiary: #202225;
 }
+
+:root[theme='NULL'] {
+    --primary: rgb(255, 0, 191);
+
+    --heading: black;
+    --font: black;
+
+    --background-primary: rgb(255, 0, 191);
+    --background-secondary: rgb(216, 0, 162);
+    --background-tertiary: rgb(255, 59, 206);
+}
+
+:root[theme='COSMIC'] {
+    --primary: rgb(118, 60, 156);
+
+    --heading: white;
+    --font: white;
+
+    --background-primary: rgb(119, 66, 187);
+    --background-secondary: rgb(88, 41, 150);
+    --background-tertiary: rgb(100, 72, 136);
+}
