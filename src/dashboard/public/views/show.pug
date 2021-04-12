@@ -32,12 +32,13 @@ body
             h4#overview.pt-2 #{guild.name}
         .tabs.navbar-nav 
             .category Modules 
-            a#administration #[i.fas.fa-gavel.pr-1.text-muted] Administration 
-            a#economy #[i.fas.fa-coins.pr-1.text-muted] Economy 
-            a#music #[i.fas.fa-music.pr-1.text-muted] Music 
-            a#general #[i.fas.fa-star.pr-1.text-muted] General 
+            a#administration #[i.fas.fa-gavel.pe-1.text-muted] Administration 
+            a#economy #[i.fas.fa-coins.pe-1.text-muted] Economy 
+            a#music #[i.fas.fa-music.pe-1.text-muted] Music 
+            a#general #[i.fas.fa-star.pe-1.text-muted] General 
             .category Other 
-            a#auditLog #[i.fas.fa-book.pr-1.text-muted] Audit Log
+            a#auditLog #[i.fas.fa-book.pe-1.text-muted] Audit Log
+            a(href='/leaderboard/' + guild.id) #[i.fas.fa-trophy.text-muted] Leaderboard
 
     include includes/navbar.pug
 

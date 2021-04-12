@@ -1,0 +1,25 @@
+include includes/header.pug
+link(rel='stylesheet', href='/styles/style.css')
+link(rel='stylesheet', href='/styles/leaderboard.css')
+link(rel='stylesheet', href='/styles/main.css')
+body
+    include includes/navbar.pug
+    header.text-center
+        br
+        br
+        h1 
+            img.round.me-3(src=guild.iconURL())
+            span  #{guild.name} Leaderboard
+        p.lead #[i.fas.fa-star] View the top 100 richest memebrs in #{guild.name}!
+
+    ul.list-group.container.mt-5
+        each savedUser, i in savedUsers 
+            - var user = guild.members.cache.get(savedUser.id)?.user
+            if user
+                li.list-group-item
+                    span 
+                        strong.round.me-3 #{i + 1}
+                        img.round.user-avatar.me-2(src=user.displayAvatarURL({ dynamic: true }))
+                        span.lead  #{user.username}
+                        span.text-muted ##{user.discriminator}
+                    span.float-end.pt-2 #[i.fas.fa-coins.text-warning] #{savedUser.coins}

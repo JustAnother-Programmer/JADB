@@ -7,17 +7,17 @@ nav.navbar.navbar-expand-lg.bg-transparent
       .navbar-nav
         a.nav-link(href='/commands')
           i.fas.fa-code
-          span.pl-5  Commands
+          span.ps-1  Commands
         
         a.nav-link(href='https://github.com/JustAnother-Programmer/JADB', target='_blank')
           i.fab.fa-github-square
-          span.pl-5  Source Code
-      .mx-left-auto
+          span.ps-1  Source Code
+      .navbar-nav.ms-auto
         if user 
           .dropdown
             a#dropdownMenuLink.btn.btn-secondary.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
               img.user-avatar.round(src=user.avatarUrl(32))
-              span.pl-2  #{user.username}
+              span.ps-2  #{user.username}
             ul.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenuLink')
               li
                 a.dropdown-item(href='/dashboard') #[i.fas.fa-user-cog] Dashboard
@@ -28,4 +28,4 @@ nav.navbar.navbar-expand-lg.bg-transparent
         else 
           a.nav-link(href='/login') 
             i.fas.fa-sign-in-alt
-            span.pl-5  Login
+            span.ps-5  Login
