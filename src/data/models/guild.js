@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 
+class GeneralModule {
+    prefix = '!'
+    blacklistedChannelIDs = []
+}
+
 module.exports = mongoose.model('guild', new mongoose.Schema({
     _id: String,
-    prefix: { type: String, default: '!' },
+    general: { type: Object, default: new GeneralModule() }
 }))

@@ -7,9 +7,9 @@ module.exports = class extends Command {
     async execute(msg, value) {
         const savedGuild = await guilds.get(msg.guild.id)
         if(!value)
-            return await msg.reply(`Prefix is \`${savedGuild.prefix}\``)
+            return await msg.reply(`Prefix is \`${savedGuild.general.prefix}\``)
 
-        savedGuild.prefix = value
+        savedGuild.general.prefix = value
         await savedGuild.save()
         await msg.reply(`Prefix has been changed to\`${value}\``)
     }

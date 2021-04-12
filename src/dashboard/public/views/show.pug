@@ -13,7 +13,7 @@ body
                     img.round(src=guild.iconURL({dynamic: true, size: 128 }), alt=guild.name)
                 else 
                     p.abbr #{guild.nameAcronym}
-            h4.pt-2 #{guild.name}
+            h4#overview.pt-2 #{guild.name}
         .tabs.navbar-nav 
             .category Modules 
             a#administration #[i.fas.fa-gavel.pr-1.text-muted] Administration 
