@@ -1,0 +1,24 @@
+section#auditLogModule.module.container.px-5
+    .jumbotron.bg-transparent.pb-0 
+        h1.display-4.text-center Audit Log 
+        p.text-center Here you can see the last 5 changes made to the bot in your server. It logs when, by who and what changed!
+        p.text-center The date is formatted as DAY/MONTH/YEAR
+    .px-5.mt-5.d-flex 
+        table.table.table-responsive-xl 
+            thead 
+                tr 
+                    th(scope='col') #
+                    th(scope='col') At
+                    th(scope='col') By
+                    th(scope='col') Old
+                    th(scope='col') New
+            tbody 
+                each change, i in savedLog.changes.reverse()
+                    tr 
+                    if i < 5
+                        th(scope='row') #{savedLog.changes.length - i}
+                        td #{new Date(change.at).toLocaleString()}
+                        td #[+user(users.get(change.by))]
+                        td #[pre #[code #{JSON.stringify(change.old, null, 4)}]]
+                        td #[pre #[code #{JSON.stringify(change.new, null, 4)}]]
+        

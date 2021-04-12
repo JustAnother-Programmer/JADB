@@ -7,10 +7,12 @@ const rootRoutes = require('./routes/root-routes.js')
 const authRoutes = require('./routes/auth-routes.js')
 const dashboardRoutes = require('./routes/dashboard-routes.js')
 const middleware = require('./modules/middleware.js')
+const rateLimit = require('./modules/rate-limiter.js')
 
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(rateLimit)
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())

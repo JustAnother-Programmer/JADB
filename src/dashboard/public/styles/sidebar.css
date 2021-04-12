@@ -6,16 +6,6 @@
     transition: border-radius .3s ease-in-out;
 }
 
-#sidebar {
-    padding: 10px;
-}
-
-#sidebar,
-#sidebarExtension {
-    height: 100vh;
-    float: left;
-}
-
 .hamburger {
     cursor: pointer;
     font-size: xxx-large;
@@ -40,10 +30,22 @@
     border-radius: 15% !important;
 }
 
+#sidebar {
+    padding: 10px;
+    background-color: var(--background-tertiary);
+}
+
+#sidebar,
+#sidebarExtension {
+    height: 100vh;
+    float: left;
+}
+
 #sidebarExtension {
     width: 275px;
     transition: .3s;
     opacity: 1;
+    background-color: var(--background-secondary);
 }
 
 #sidebarExtension .large-icon {
@@ -83,12 +85,12 @@
     padding-left: 10px !important;
     border-radius: 5px;
     text-decoration: none;
-    color: black;
+    color: var(--font);
     cursor: pointer;
 }
 
 .tabs a:hover {
-    background-color: white;
+    background-color: var(--background-primary);
 }
 
 .tabs .category {
@@ -102,5 +104,5 @@
 }
 
 .tabs .category:hover {
-    color: black;
+    color: var(--heading);
 }

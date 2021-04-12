@@ -1,12 +1,16 @@
 include includes/header.pug
-link(rel='stylesheet', href='/styles/style.css')
-link(rel='stylesheet', href='/styles/sidebar.css')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js', defer)
 script(src='/javascript/sidebar.js', defer)
 script(src='/javascript/guild.js', defer)
+
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css')
+link(rel='stylesheet', href='/styles/style.css')
+link(rel='stylesheet', href='/styles/sidebar.css')
 body
     include includes/sidebar.pug
+    include includes/mixins.pug
 
-    #sidebarExtension.bg-light 
+    #sidebarExtension
         header.text-center.pt-4 
             .large-icon.bg-white.round 
                 if guild.icon
@@ -20,6 +24,8 @@ body
             a#economy #[i.fas.fa-coins.pr-1.text-muted] Economy 
             a#music #[i.fas.fa-music.pr-1.text-muted] Music 
             a#general #[i.fas.fa-star.pr-1.text-muted] General 
+            .category Other 
+            a#auditLog #[i.fas.fa-book.pr-1.text-muted] Audit Log
 
     include includes/navbar.pug
 
@@ -28,3 +34,5 @@ body
     include modules/economy
     include modules/general
     include modules/music
+
+    include extensions/audit-log

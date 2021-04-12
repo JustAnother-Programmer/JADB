@@ -6,5 +6,13 @@ module.exports = class extends Event {
   
   invoke() {
     console.log(`Logged in as ${bot.user.username}`)
+    
+    bot.user.setPresence({
+      status: 'online',
+      activity: {
+        name: 'the dashboard on jadb.xyz',
+        type: 'WATCHING'
+      }
+    })
   }
 }

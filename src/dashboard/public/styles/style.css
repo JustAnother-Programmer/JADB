@@ -5,3 +5,32 @@
 nav {
     background-color: white;
 }
+
+.user-avatar {
+    max-width: 36px;
+}
+
+body {
+    background-color: var(--background-primary);
+    color: var(--font);
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--heading);
+}
+
+code.hljs {
+    background-color: var(--background-secondary);
+}
+
+.navbar a {
+    color: var(--heading);
+}
+
+.table {
+    color: var(--heading);
+}
+
+.dropdown-menu {
+    background-color: inherit;
+}
