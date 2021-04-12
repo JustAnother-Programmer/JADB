@@ -5,10 +5,10 @@ section#economyModule.module.container.px-5
         .form-group.my-5
             .row 
                 .col-4 
-                    label Message Cooldown 
+                    label Message Cooldown  (In Seconds)
                     input.form-control(type='number', name='messageCooldown', value=savedGuild.economy.messageCooldown, min='1')
                 .col-4 
-                    label Minimum Message Length
+                    label Minimum Message Length (In Characters)
                     input.form-control(type='number', name='minLength', value=savedGuild.economy.minLength, min='1')
         .d-flex.justify-content-center 
             button.btn.btn-success #[i.fas.fa-rocket] Save 
