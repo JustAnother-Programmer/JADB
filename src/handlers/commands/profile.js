@@ -5,6 +5,7 @@ const canvacord = require('canvacord')
 
 module.exports = class extends Command {
     name = 'profile'
+    category = 'Economy'
 
     async execute(msg, mention) {
         const userId = mention
