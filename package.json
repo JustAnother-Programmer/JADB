@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/JustAnother-Programmer/JADB#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.3",
     "canvacord": "^5.1.0",
     "cookie-parser": "^1.4.7",
     "disco-oauth": "^5.0.1",
